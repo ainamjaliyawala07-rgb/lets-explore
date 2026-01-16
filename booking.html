@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Booking</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Booking Details</h2>
+
+<p id="place"></p>
+<label>Persons:</label>
+<input type="number" id="persons" value="1">
+<br><br>
+<button onclick="pay()">Pay Now</button>
+
+<script>
+let place=localStorage.getItem("place");
+let price=localStorage.getItem("price");
+document.getElementById("place").innerHTML=
+ place+" - ₹"+price+"/person";
+
+function pay(){
+ let persons=document.getElementById("persons").value;
+ let total=price*persons;
+
+ let bookings=JSON.parse(localStorage.getItem("bookings"))||[];
+ bookings.push({place,persons,total});
+ localStorage.setItem("bookings",JSON.stringify(bookings));
+
+ alert("Payment Successful\nTotal ₹"+total);
+}
+</script>
+</body>
+</html>
