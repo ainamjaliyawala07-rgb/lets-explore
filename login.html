@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2 align="center">Login</h2>
+
+<div class="card">
+<input type="text" id="user" placeholder="Username"><br><br>
+<input type="password" id="pass" placeholder="Password"><br><br>
+<button onclick="login()">Login</button>
+</div>
+
+<script>
+function login(){
+ let u=document.getElementById("user").value;
+ let p=document.getElementById("pass").value;
+
+ if(u==="admin" && p==="admin"){
+   window.location="admin.html";
+ }else if(u && p){
+   window.location="index.html";
+ }else{
+   alert("Invalid Login");
+ }
+}
+</script>
+</body>
+</html>
