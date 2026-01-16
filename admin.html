@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Admin Dashboard</h2>
+
+<table border="1" align="center">
+<tr><th>Place</th><th>Persons</th><th>Total</th></tr>
+<tbody id="data"></tbody>
+</table>
+
+<script>
+let bookings=JSON.parse(localStorage.getItem("bookings"))||[];
+let d=document.getElementById("data");
+
+bookings.forEach(b=>{
+ d.innerHTML+=`<tr>
+ <td>${b.place}</td>
+ <td>${b.persons}</td>
+ <td>₹${b.total}</td>
+ </tr>`;
+});
+</script>
+</body>
+</html>
