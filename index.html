@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tourism Website</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+<h1>Tourism Booking Website</h1>
+</header>
+
+<div class="places">
+
+<div class="card">
+<h2>Paris</h2>
+<p>Best Time: April – June</p>
+<p>₹5000 / person</p>
+<button onclick="selectPlace('Paris',5000)">Book</button>
+</div>
+
+<div class="card">
+<h2>Bali</h2>
+<p>Best Time: April – October</p>
+<p>₹7000 / person</p>
+<button onclick="selectPlace('Bali',7000)">Book</button>
+</div>
+
+<div class="card">
+<h2>Taj Mahal</h2>
+<p>Best Time: October – March</p>
+<p>₹3000 / person</p>
+<button onclick="selectPlace('Taj Mahal',3000)">Book</button>
+</div>
+
+</div>
+
+<script>
+function selectPlace(p,price){
+ localStorage.setItem("place",p);
+ localStorage.setItem("price",price);
+ window.location="booking.html";
+}
+</script>
+</body>
+</html>
